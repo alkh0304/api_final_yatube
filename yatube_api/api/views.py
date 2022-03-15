@@ -4,7 +4,7 @@ from rest_framework import filters, viewsets
 
 from api.serializers import (CommentSerializer, FollowSerializer,
                              GroupSerializer, PostSerializer)
-from posts.models import Group, Post, User
+from posts.models import Group, Post
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -42,9 +42,7 @@ class FollowViewSet(viewsets.ModelViewSet):
     search_fields = ('following__username',)
 
     def get_queryset(self):
-        current_user = get_object_or_404(User, username=self.request.user)
-        return current_user.user.all()
+        return self.request.user.user.all()
 
     def perform_create(self, serializer):
-        current_user = get_object_or_404(User, username=self.request.user)
-        serializer.save(user=current_user)
+        serializer.save(user=self.request.user)
