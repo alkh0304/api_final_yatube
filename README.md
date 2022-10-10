@@ -1,3 +1,19 @@
+# Yatube
+
+## Описание
+
+Социальная сеть на Django (frontend и backend) для ведения дневников с возможностью у пользователей создавать учетные записи, публиковать посты, подписываться на авторов, отмечать понравившиеся записи и комментировать посты.
+
+Реализовано взаимодействие с проектом через API и аутентификация по JWT токену.
+
+## Технологии и библиотеки:
+- [Python](https://www.python.org/);
+- [Django](https://www.djangoproject.com);
+- [Pillow](https://pillow.readthedocs.io/en/stable/);
+- [SQLite3](https://www.sqlite.org/index.html);
+- [Simple-JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/);
+- [Django REST Framework](https://www.django-rest-framework.org).
+
 ### Как запустить проект:
 
 Клонировать репозиторий и перейти в него в командной строке:
@@ -87,3 +103,7 @@ POST api/v1/jwt/refresh/
 ```
 POST api/v1/jwt/verify/
 ```
+
+## Над проектом Yatube работал:
+
+[Александр Хоменко](https://github.com/alkh0304)
